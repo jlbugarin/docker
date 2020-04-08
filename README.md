@@ -21,3 +21,6 @@ docker stop <containerid>
 
 #eliminar contenedor
 docker rm <containerid>
+
+#listar ids de contenedores
+docker ps -a -q
