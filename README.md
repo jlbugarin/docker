@@ -14,6 +14,10 @@ docker run <nombre_imagen>
 docker rmi <imageID>
 
 #lista historial de imagenes
-docker history ImageID
+docker history <ImageID>
+  
+#detener contenedor
+docker stop <containerid>
 
-
+#eliminar contenedor
+docker rm <containerid>
