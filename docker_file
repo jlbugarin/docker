@@ -1,0 +1,7 @@
+#ejemplo de imagen docker
+FROM java
+MAINTAINER jlbugarin
+COPY . /usr/src/
+WORKDIR /usr/src/
+RUN javac Hola.java
+CMD ["java", "Holi"]
