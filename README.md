@@ -28,3 +28,10 @@ docker ps -a -q
 #eliminar contenedores
 docker stop $(docker ps -a -q)
 docker rm $(docker ps -a -q)
+
+#docker container prune /eliminar todos los contenedores
+docker container prune
+docker image prune
+
+#docker ip
+docker-machine ip
