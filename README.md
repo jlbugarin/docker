@@ -8,19 +8,19 @@ docker images
 docker ps -a
 
 #ejecutar imagen docker:>
-docker run <nombre_imagen>
+docker run -nombre_imagen-
 
 #eliminar imagen:>
-docker rmi <imageID>
+docker rmi -imageID-
 
 #lista historial de imagenes:>
-docker history <ImageID>
+docker history -ImageID-
   
 #detener contenedor:>
-docker stop <containerid>
+docker stop -containerid-
 
 #eliminar contenedor:>
-docker rm <containerid>
+docker rm -containerid-
 
 #listar ids de contenedores:>
 docker ps -a -q
