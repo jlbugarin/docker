@@ -1,0 +1,14 @@
+#docker file con descarga de libreria y add al path
+FROM openjdk:8-jre-alpine
+MAINTAINER Jose Luis Bugarin
+COPY springbootconsultorjava-0.0.1-SNAPSHOT.jar /usr/share/app.jar
+WORKDIR /usr/share
+ADD https://repo1.maven.org/maven2/co/elastic/apm/elastic-apm-agent/1.7.0/elastic-apm-agent-1.7.0.jar elastic-apm-agent.jar
+EXPOSE 8082
+CMD ["java", "-jar", "-XshowSettings:vm -javaagent:elastic-apm-agent.jar -Delastic.apm.application_packages=com.consultorjava -Delastic.apm.service_name=BugaDocker -Delastic.apm.server_urls=http://192.168.1.11:8200", "app.jar"]
+
+#construir la imagen
+docker  build  .  -t  "apm-elk"     
+
+#ejecutar la imagen
+docker run -p 8082:8082 apm-elk
