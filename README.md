@@ -35,3 +35,6 @@ docker image prune
 
 #docker ip:>
 docker-machine ip
+
+#elimina contenedores e imagenes
+docker rmi $(docker images -q) --force
